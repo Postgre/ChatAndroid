@@ -13,19 +13,23 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.alejandro.udlamsg.Model.GlobalType;
 import com.example.alejandro.udlamsg.Model.Imagen;
 import com.example.alejandro.udlamsg.Model.Message;
+import com.example.alejandro.udlamsg.Model.SingletonChatTemporal;
 import com.example.alejandro.udlamsg.Model.SingletonListaIntegrantes;
 import com.example.alejandro.udlamsg.Model.SingletonWebSocket;
 import com.example.alejandro.udlamsg.R;
@@ -39,6 +43,7 @@ import org.java_websocket.handshake.ServerHandshake;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.List;
 
 public class Chat2 extends AppCompatActivity {
     private WebSocketClient mWebSocketClient;
@@ -59,6 +64,7 @@ public class Chat2 extends AppCompatActivity {
     String _codReceptor;
     String mPath;
     ImageView imgFoto;
+    String StringImagen = null;
     private String name = "";
 
     @Override
@@ -69,24 +75,29 @@ public class Chat2 extends AppCompatActivity {
         imgFoto = (ImageView) findViewById(R.id.img_foto);
 
         iniciarDatos();
-
+        HistoricoChatRender();
         botonenviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 _mensaje =  editText.getText().toString();
+                editText.setText("");
                 Thread nt2 = new Thread() {
-
-
 
                     @Override
                     public void run() {
 
                         Gson data = new Gson();
 
-                        setSend(GlobalType.MESSAGE,_mensaje,null);
+                        String Datamessage;
                         try {
-                            String Datamessage = data.toJson(getSend());
+
+                            if (StringImagen!=null){
+                                setSend(GlobalType.MESSAGE,null,StringImagen);
+                            }else{
+                                setSend(GlobalType.MESSAGE,_mensaje,null);
+                            }
+                            Datamessage = data.toJson(getSend());
                             SingletonWebSocket.getInstance().getWebsocket().send(Datamessage);
 
                         } catch (Exception e) {
@@ -94,13 +105,6 @@ public class Chat2 extends AppCompatActivity {
 
                         }
 
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                _listamessage.setText(_listamessage.getText() + "\n" + getSend().getCodeEmisor() + ":" + getSend().getSend());
-                                editText.setText("");
-                            }
-                        });
                     }
                 };
                 nt2.start();
@@ -173,11 +177,6 @@ public class Chat2 extends AppCompatActivity {
     protected void onActivityResult(int requestCode,int resultCode,Intent data)
     {
         ImageView img_foto = (ImageView) findViewById(R.id.img_foto);
-        String StringImagen = null;
-
-        Gson _data = new Gson();
-
-
 
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1 && resultCode == RESULT_OK && null != data) {
@@ -201,7 +200,6 @@ public class Chat2 extends AppCompatActivity {
                 if (data.hasExtra("data")) {
                     StringImagen = _img.BitMapToString(bitmap);
                     img_foto.setImageBitmap(bitmap);
-
                 }
             } else {
                 Bitmap img =  BitmapFactory.decodeFile(name);
@@ -209,14 +207,6 @@ public class Chat2 extends AppCompatActivity {
                 img_foto.setImageBitmap(img);
             }
         }
-        setSend(GlobalType.MESSAGE,null,StringImagen);
-        String Datamessage = _data.toJson(getSend());
-        if (Datamessage!=null){
-            setSend(GlobalType.MESSAGE,null,Datamessage);
-            SingletonWebSocket.getInstance().getWebsocket().send(Datamessage);
-        }
-
-
 
     }
     // </editor-fold>
@@ -255,7 +245,25 @@ public class Chat2 extends AppCompatActivity {
         send.setFile(Foto);
         send.setNick(_codEmisor);
         send.setCodeReceptor(_codReceptor);
+    }
+    public void HistoricoChatRender(){
+        runOnUiThread(new Runnable() {
 
+            @Override
+            public void run() {
+                List<Message> dt = SingletonChatTemporal.getInstance().getListaChat();
+                if (dt != null || dt.size() > 0) {
+                    List<Message> historico = SingletonChatTemporal.getInstance().HistoricoMessages(_codEmisor, _codReceptor);
+                    if(historico.size()>0){
+                        _listamessage.setText("");
+                        for (Message men : historico) {
+                            _listamessage.setText(_listamessage.getText() + "\n" + men.getCodeEmisor() + ":" + men.getSend());
+                        }
+                    }
+                }
+                editText.setText("");
+            }
+        });
     }
     // </editor-fold>
 }

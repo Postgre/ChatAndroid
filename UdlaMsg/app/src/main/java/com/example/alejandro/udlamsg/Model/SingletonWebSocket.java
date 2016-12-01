@@ -17,16 +17,25 @@ import com.example.alejandro.udlamsg.R;
 import com.example.alejandro.udlamsg.lista.Integrante;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
+
 import org.java_websocket.client.WebSocketClient;
 import org.java_websocket.handshake.ServerHandshake;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.Console;
+import java.lang.reflect.Type;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 
 /**
  * Created by oswaldo on 18/11/2016.
@@ -63,6 +72,12 @@ public class SingletonWebSocket {
                 Gson data = new GsonBuilder().create();
                 String _nombreActividad =  actityActual.getClass().getSimpleName();
 
+                Message m = data.fromJson(message, Message.class);
+
+                if(m.getType().equals(GlobalType.MESSAGE)){      //grabo el mensaje en mi lista temporal
+                    SingletonChatTemporal.getInstance().getListaChat().add(m);
+
+                }
                 if(_nombreActividad.equals(GlobalActivity.CHAT)){
                     eventosChat(data,message);
                 }
@@ -95,26 +110,43 @@ public class SingletonWebSocket {
         actityActual.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-
                 if (GlobalType.CONNECT.equals(data.getType()))
                     _estadoChat.setText(EstadoChat(data.getCodeEmisor(),data.getType()));
                 if (GlobalType.DISCONECTED.equals(data.getType()))
                     _estadoChat.setText(EstadoChat(data.getCodeEmisor(),data.getType()));
                 if(GlobalType.MESSAGE.equals(data.getType())){
-                    _listChat.setText(_listChat.getText() + "\n" + data.getCodeEmisor() + ":" +  data.getSend());
-                     Bitmap img = _imagen.ConvertStringBItmap(data.getFile());
-                    _imagenChat.setImageBitmap(img);
+                    if (data.getFile() !=null){
+                        Bitmap img = _imagen.ConvertStringBItmap(data.getFile());
+                        _imagenChat.setImageBitmap(img);
+                    }
+                    if(data.getSend()!=null){
+                        _listChat.setText("");
+                        List<Message> historico = SingletonChatTemporal.getInstance().
+                                                        HistoricoMessages(data.getCodeEmisor(),data.getCodeReceptor());
+                        for (Message men: historico) {
+                            _listChat.setText(_listChat.getText() + "\n" + men.getCodeEmisor() + ":" +  men.getSend());
+                        }
+                    }
+
                 }
             }
         });
     }
 
+
+    private void AddMessageChat(Message data){
+         String Cant =String.valueOf(SingletonChatTemporal.getInstance().getListaChat().size());
+         data.setCodeEmisor(Cant);
+         SingletonChatTemporal.getInstance().getListaChat().add(data);
+
+    }
     private void NotificadorIntegrantes(Gson gson,String message){
 
-        final Message data = gson.fromJson(message,Message.class);
+        final Message data = gson.fromJson(message, Message.class);
+
+
         final ListView listViewcontactos = (ListView) actityActual.findViewById(R.id.lista_integrantes);
 
-                  // FALTA AGREGAR LOS CHAT..
                 if (GlobalType.CONNECT.equals(data.getType())){
                     Integrante _integrante =  CambiarEstadoIntegrante(data.getCodeEmisor(),GlobalType.DISPONIBLE);
                     RenderizeIntegrante(listViewcontactos,_integrante,actityActual);
@@ -122,6 +154,10 @@ public class SingletonWebSocket {
                 if(GlobalType.DISCONECTED.equals(data.getType())){
 
                     Integrante _integrante =  CambiarEstadoIntegrante(data.getCodeEmisor(),GlobalType.DESCONECTADO);
+                    RenderizeIntegrante(listViewcontactos,_integrante,actityActual);
+                }
+                if(GlobalType.NOTIFICATION.equals(data.getType())){
+                    Integrante _integrante =  CambiarEstadoIntegrante(data.getCodeEmisor(),GlobalType.DISPONIBLE);
                     RenderizeIntegrante(listViewcontactos,_integrante,actityActual);
                 }
 
@@ -153,7 +189,6 @@ public class SingletonWebSocket {
         }
         return mensaje;
     }
-
     public Integrante CambiarEstadoIntegrante(String codIntegrante,String TypeConected){
         Integrante _integrante = SingletonListaIntegrantes.getInstance().getIntegrante();
         for (int i = 0; i < _integrante.getNombres().length; i++) {
@@ -180,7 +215,6 @@ public class SingletonWebSocket {
             }
         });
     }
-
 
     private String getDateTime() {
         Calendar calendario = new GregorianCalendar();
@@ -220,6 +254,7 @@ public class SingletonWebSocket {
     }
     // </editor-fold>
 }
+
 
 
 

@@ -68,14 +68,14 @@ public class Iniciarsesion extends AppCompatActivity {
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
                 PropertyInfo pi=new PropertyInfo();
                 pi.setName("usuario");
-                //pi.setValue(params[0]);
-                pi.setValue("camila");
+                pi.setValue(params[0]);
+               // pi.setValue("camila");
                 pi.setType(Integer.class);
                 request.addProperty(pi);
                 pi=new PropertyInfo();
                 pi.setName("Contraseña");
-                //pi.setValue(params[1]);
-                pi.setValue("munar");
+                pi.setValue(params[1]);
+                //pi.setValue("munar");
                 pi.setType(Integer.class);
                 request.addProperty(pi);
                 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);

@@ -19,6 +19,9 @@ public class ListaChats extends BaseAdapter {
     ArrayList<String> Chat;
     ArrayList<String> Mensaje;
 
+    public ListaChats(){
+
+    }
     public ListaChats(Context context, ArrayList<String> chats,ArrayList<String> mensaje){
         this.contexto=context;
         this.Chat=chats;
@@ -53,6 +56,7 @@ public class ListaChats extends BaseAdapter {
         nombrechatpersona.setText(Chat.get(i));
         horachat.setText("3:00pm");
         ultmensaje.setText(Mensaje.get(i));
+
         return vista;
     }
 }

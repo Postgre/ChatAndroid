@@ -16,9 +16,7 @@ namespace WebSocketsServerDemo
         private WebSocketServer appServer;
         private Controller _controller = new Controller();
         private List<Metadata> _userOnline = new List<Metadata>();
-        
         private GlobalType _Global = new GlobalType();
-      
 
         #region CONFIGURACIÓN DEL SERVIDOR
         public void Setup()
@@ -36,10 +34,8 @@ namespace WebSocketsServerDemo
             appServer.NewSessionConnected   += new SessionHandler<WebSocketSession>(NewSessionConnected);
             appServer.SessionClosed         += new SessionHandler<WebSocketSession, CloseReason>(SessionClosed);
             appServer.NewMessageReceived    += new SessionHandler<WebSocketSession, string>(NewMessageReceived);
-
             Console.WriteLine();
         }
-
         
         public void Start()
         {
@@ -52,7 +48,6 @@ namespace WebSocketsServerDemo
 
             Console.WriteLine("El servidor se ha iniciado satisfactoriamente!Pulse cualquier tecla para ver las opciones.");
             Console.ReadKey();
-
             ShowAvailableOptions(); 
 
             char keyStroked;
@@ -116,15 +111,28 @@ namespace WebSocketsServerDemo
                     String mensaje = obj.send;
                     String estado = _receiverUser != null?"0":"1";
                     //if(_controller.enviarMensaje(idemisor,idreceptor,idgrupo,mensaje,estado)){
+                        
                     //}
                     enviarChat(session, message, _receiverUser);
+
                         
                     break;
-               
-                case GlobalType.INFORMATION:
+
+                case GlobalType.NOTIFICATION:
                     
-                    string JSON = inforUsuarioOnline();
-                    enviarNotificacion(session,JSON);
+                    Console.WriteLine(message);
+
+                    foreach (Metadata _user in _userOnline)
+                    {
+                        String _JSON = @"
+                                {" +
+                                           "\"type\": \"" + GlobalType.CONNECT + "\"," +
+                                            "\"codeEmisor\" :\"" + _user.CodeUser + "\"" +
+                                        "}";
+                        session.Send(_JSON);
+                        Console.WriteLine(_JSON);
+                    }
+                    
                     break;
             }
             
@@ -132,6 +140,7 @@ namespace WebSocketsServerDemo
 
         private void NewSessionConnected(WebSocketSession session)
         {
+          
             DataTable dt = _controller.NotificadorGrupo("", "");
             Console.WriteLine();
             Console.WriteLine("Usuario Conectado: " + appServer.SessionCount);
@@ -173,10 +182,12 @@ namespace WebSocketsServerDemo
                 if(metadata != null){
                     if (metadata.SessionId.Equals(sessions.SocketSession.SessionID.ToString())) {
                         sessions.Send(json);
+                        
                         Console.WriteLine(json);
                     }
                 }
             }
+            session.Send(json);
         }
         private void enviarMensaje(WebSocketSession session, string json)
         {
@@ -198,18 +209,6 @@ namespace WebSocketsServerDemo
                     Console.WriteLine(json);
                 }
             }
-        }
-
-        private String inforUsuarioOnline() {
-           String JSON = "";
-            foreach (Metadata _user in _userOnline)
-            {
-                TemplateData _inf = new TemplateData();
-                _inf._JSON.Replace(TemplateData.TYPE, GlobalType.NOTIFICATION);
-                _inf._JSON.Replace(TemplateData.CODEEMISOR, _user.CodeUser);
-                JSON = JSON + _inf._JSON;
-            }
-            return JSON;
         }
 
         #region ConvertJsonObject

@@ -25,6 +25,7 @@ public class ListaCursos extends ArrayAdapter<String> {
         this.context=context;
         this.datos1=Dato1;
     }
+    public void ListaCursos(){}
     @Override
     public View getView(int i, View view, ViewGroup parent) {
         inflater = LayoutInflater.from(this.context);

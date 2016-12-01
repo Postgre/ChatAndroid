@@ -15,10 +15,13 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.alejandro.udlamsg.Model.GlobalType;
+import com.example.alejandro.udlamsg.Model.Message;
 import com.example.alejandro.udlamsg.Model.SingletonListaIntegrantes;
 import com.example.alejandro.udlamsg.Model.SingletonWebSocket;
 import com.example.alejandro.udlamsg.R;
 import com.example.alejandro.udlamsg.lista.Integrante;
+import com.google.gson.Gson;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.PropertyInfo;
@@ -30,7 +33,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaIntegrantes extends AppCompatActivity {
-
+    Message _mensaje = new Message();
     ListView listViewcontactos;
     Integrante _integrantes;
     ListAdapter adaptador;
@@ -57,7 +60,6 @@ public class ListaIntegrantes extends AppCompatActivity {
         SoapContactos c = new SoapContactos();
         SingletonWebSocket.getInstance().setActityActual(this);
         SingletonListaIntegrantes.getInstance().setActivityIntegrante(this);
-
         c.execute(numero);
     }
 
@@ -93,6 +95,14 @@ public class ListaIntegrantes extends AppCompatActivity {
                 ArrayList<Estudiantes> arrayList = new ArrayList<Estudiantes>();
                 arrayList = oj.SoapDeserializeArray(Estudiantes.class, (SoapObject) (envelope.getResponse()));
                 SoapObject response = (SoapObject) envelope.getResponse();
+
+                Gson data = new Gson();
+                _mensaje.setType(GlobalType.NOTIFICATION);
+                _mensaje.setCodeEmisor(codigemisor);
+                String _mens = data.toJson(_mensaje);
+                SingletonWebSocket.getInstance().setReceptorActual(codigemisor);
+                SingletonWebSocket.getInstance().getWebsocket().send(_mens);
+
                 webrespons = arrayList;
 
 

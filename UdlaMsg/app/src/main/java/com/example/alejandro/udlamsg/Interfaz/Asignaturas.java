@@ -131,7 +131,7 @@ public class Asignaturas extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub
         if (keyCode == event.KEYCODE_BACK) {
-            SingletonWebSocket.getInstance().getWebsocket().close();;
+            SingletonWebSocket.getInstance().getWebsocket().close();
         }
         return super.onKeyDown(keyCode, event);
     }

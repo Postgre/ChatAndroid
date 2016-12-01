@@ -16,6 +16,7 @@ public class SingletonListaIntegrantes {
     private ListAdapter _adapter;
     private Context _context;
     private AppCompatActivity activityIntegrante;
+
     public static SingletonListaIntegrantes getInstance() {
         return ourInstance;
     }

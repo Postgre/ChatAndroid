@@ -11,7 +11,7 @@ namespace WebSocketsServerDemo
         public const String MESSAGE = "message";
         public const String CONNECT = "connected";
         public const String DISCONECTED = "disconected";
-        public const String NOTIFICATION = "notification";
+        public const String NOTIFICATION = "notification"; 
         public const String INFORMATION = "Information";
 
     }

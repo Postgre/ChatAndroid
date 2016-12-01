@@ -5,7 +5,7 @@ package com.example.alejandro.udlamsg.Model;
  */
 
 public class Message {
-
+    private String code;
     private String type;
     private String group;
     private String codeEmisor;
@@ -69,5 +69,13 @@ public class Message {
 
     public void setCodeReceptor(String codeReceptor) {
         this.codeReceptor = codeReceptor;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }
