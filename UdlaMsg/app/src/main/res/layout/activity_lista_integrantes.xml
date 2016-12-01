@@ -64,10 +64,11 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_above="@+id/textView_titulointegrantes"
         android:layout_alignStart="@+id/textView_titulointegrantes"
-        android:foregroundGravity="center" />
+        android:foregroundGravity="center"
+        android:layout_toLeftOf="@+id/tuser"
+        android:layout_toStartOf="@+id/tuser" />
 
     <ImageView
         android:layout_width="60dp"
@@ -77,5 +78,19 @@
         android:visibility="visible"
         android:layout_alignParentTop="true"
         android:layout_alignStart="@+id/imageView_integrantes" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tuser"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:foregroundGravity="center"
+        android:text="user: 0"
+        android:layout_above="@+id/textView_titulointegrantes"
+        android:layout_alignRight="@+id/textView_titulointegrantes"
+        android:layout_alignEnd="@+id/textView_titulointegrantes"
+        android:layout_alignParentTop="true" />
 
 </RelativeLayout>

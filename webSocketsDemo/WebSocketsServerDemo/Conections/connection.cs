@@ -14,7 +14,8 @@ namespace WebSocketsServerDemo
     {
         private string getConnectionString()
             {
-                return "server=52.36.238.241; database=udlamsg; Uid=admin; pwd=admin;";
+               // return "server=52.36.238.241; database=udlamsg; Uid=admin; pwd=admin;";
+                return "server=127.0.0.1; database=udlamsg; Uid=root; pwd=root;";
             }
 
             public DataSet getDataMariaDB(string sql)

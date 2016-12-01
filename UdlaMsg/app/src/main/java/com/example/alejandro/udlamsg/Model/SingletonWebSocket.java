@@ -133,7 +133,6 @@ public class SingletonWebSocket {
         });
     }
 
-
     private void AddMessageChat(Message data){
          String Cant =String.valueOf(SingletonChatTemporal.getInstance().getListaChat().size());
          data.setCodeEmisor(Cant);
@@ -199,17 +198,29 @@ public class SingletonWebSocket {
             }
         }
         return _integrante;
+    }
 
+    public int IntegrantesOnline(){
+        String[] _estados = SingletonListaIntegrantes.getInstance().getIntegrante().getEstado();
+        int count=0;
+        for (int i=0 ; i < _estados.length;i++){
+            if (_estados[i].equals(GlobalType.DISPONIBLE) ){
+                count++;
+            }
+        }
+        return count;
     }
     //renderiza la lista de contactos..
     public void RenderizeIntegrante(ListView listViewcontactos, Integrante integrante,AppCompatActivity _actividad){
         final ListView _listViewcontactos = listViewcontactos;
         final Integrante _integrante = integrante;
         final AppCompatActivity _app = _actividad;
+        final TextView _countUserOnline = (TextView) _app.findViewById(R.id.tuser);
          String _nombreActividad =  _actividad.getClass().getSimpleName();
         _app.runOnUiThread(new Runnable() {
             @Override
             public void run() {
+                _countUserOnline.setText("online:" + IntegrantesOnline());
                 adaptador = new ListaAdapterCompañeros(_app.getApplicationContext(),_integrante);
                 _listViewcontactos.setAdapter(adaptador);
             }

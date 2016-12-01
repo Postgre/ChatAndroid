@@ -110,9 +110,8 @@ namespace WebSocketsServerDemo
                     String idgrupo = obj.group;
                     String mensaje = obj.send;
                     String estado = _receiverUser != null?"0":"1";
-                    //if(_controller.enviarMensaje(idemisor,idreceptor,idgrupo,mensaje,estado)){
-                        
-                    //}
+                    _controller.enviarMensaje(idemisor,idreceptor,mensaje,estado);
+                    
                     enviarChat(session, message, _receiverUser);
 
                         
@@ -141,7 +140,7 @@ namespace WebSocketsServerDemo
         private void NewSessionConnected(WebSocketSession session)
         {
           
-            DataTable dt = _controller.NotificadorGrupo("", "");
+           // DataTable dt = _controller.NotificadorGrupo("", "");
             Console.WriteLine();
             Console.WriteLine("Usuario Conectado: " + appServer.SessionCount);
 
