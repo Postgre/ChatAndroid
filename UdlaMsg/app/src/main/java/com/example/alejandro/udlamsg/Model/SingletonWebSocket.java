@@ -54,7 +54,7 @@ public class SingletonWebSocket {
     private void connectWebSocket() {
         URI uri;
         try {
-            uri = new URI("ws://192.168.1.5:2012");
+            uri = new URI("ws://52.53.151.16:2012");
         } catch (URISyntaxException e) {
             e.printStackTrace();
             return;

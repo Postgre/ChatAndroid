@@ -133,6 +133,10 @@ namespace WebSocketsServerDemo
                     }
                     
                     break;
+                case GlobalType.STOPMESSEGE:   // descarga todo los mensajes pendiente guardados en la BD.
+
+                   break;
+
             }
             
         }
