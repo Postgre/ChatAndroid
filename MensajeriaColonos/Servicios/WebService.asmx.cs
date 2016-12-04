@@ -77,5 +77,10 @@ namespace Servicios
         {
             return Usuario.consultarusuario(id);
         }
+        [WebMethod]
+        public bool ActualizarPerfil(byte[] imagen, int codigo_usuario)
+        {
+            return Usuario.Actualizar_Perfil(imagen, codigo_usuario);
+        }
     }
 }

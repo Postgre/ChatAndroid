@@ -13,3 +13,10 @@ G:\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.pdb
 G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.csprojResolveAssemblyReference.cache
 G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.dll
 G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.pdb
+F:\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.dll
+F:\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.pdb
+F:\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.dll
+F:\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.pdb
+F:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.csprojResolveAssemblyReference.cache
+F:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.dll
+F:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.pdb

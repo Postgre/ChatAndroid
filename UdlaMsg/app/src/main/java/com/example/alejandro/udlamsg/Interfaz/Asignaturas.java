@@ -70,9 +70,9 @@ public class Asignaturas extends AppCompatActivity {
             String webResponse = "";
             Persona Webserponse;
             try {
-                final String NAMESPACE = "http://duban.org/";
-                final String URL = "http://52.36.238.241/DUban/Web_Service.asmx";
-                final String SOAP_ACTION = "http://duban.org/consulta_usuario";
+                final String NAMESPACE = "http://tempuri.org/";
+                final String URL = "http://52.53.151.16/SWChat/WebService.asmx";
+                final String SOAP_ACTION = "http://tempuri.org/consulta_usuario";
                 final String METHOD_NAME = "consulta_usuario";
 
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
@@ -86,22 +86,22 @@ public class Asignaturas extends AppCompatActivity {
                 envelope.dotNet = true;
                 envelope.setOutputSoapObject(request);
                 HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-
                 androidHttpTransport.call(SOAP_ACTION, envelope);
-                Object r =  envelope.getResponse();
-                Persona Per = new Persona((SoapObject) envelope.getResponse());
+                Object raaa =  envelope.getResponse();
+               // Persona Per = new Persona((SoapObject) envelope.getResponse());
+                Persona Per = new Persona();
+                Per.nombre =  envelope.getResponse().toString();
                 codEmisor = String.valueOf(Per.nombre);
                 byte[] imagen = null;
                 String name =Per.nombre;
-
                 try {
-                    imagen = Base64.decode(Per.foto,Base64.DEFAULT);
-                    Bitmap m = BitmapFactory.decodeByteArray(imagen, 0, imagen.length);
+                 //   imagen = Base64.decode(Per.foto,Base64.DEFAULT);
+                 //   Bitmap m = BitmapFactory.decodeByteArray(imagen, 0, imagen.length);
 
                 }catch (Exception e){
 
                 }
-                SoapObject response = (SoapObject) envelope.getResponse();
+            //    SoapObject response = (SoapObject) envelope.getResponse();
                 //webResponse = response.getPropertyAsString("nombre");
                 Gson data = new Gson();
                 _mensaje.setType(GlobalType.CONNECT);
@@ -143,14 +143,14 @@ public class Asignaturas extends AppCompatActivity {
         protected ArrayList<Cursos> doInBackground(Integer... params) {
             webrespons = new ArrayList<Cursos>();
             try {
-                final String NAMESPACE = "http://duban.org/";
-                final String URL = "http://52.36.238.241/DUban/Web_Service.asmx";
-                final String SOAP_ACTION = "http://duban.org/materias_matriculadas";
-                final String METHOD_NAME = "materias_matriculadas";
+                final String NAMESPACE = "http://tempuri.org/";
+                final String URL = "http://52.53.151.16/SWChat/WebService.asmx";
+                final String SOAP_ACTION = "http://tempuri.org/ListadoCursos";
+                final String METHOD_NAME = "ListadoCursos";
 
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
                 PropertyInfo pi = new PropertyInfo();
-                pi.setName("id");
+                pi.setName("id_usuario");
                 //int j= Integer.parseInt(params[0]);
                 pi.setValue(params[0].intValue());
                 pi.setType(Integer.class);
@@ -185,8 +185,8 @@ public class Asignaturas extends AppCompatActivity {
             int[]  n = new int[cantidad];
 
             for (int i = 0; i < cantidad; i++) {
-                amigos[i] = resultado.get(i).Materia;
-                n[i] = resultado.get(i).NumeroCurso;
+                amigos[i] = resultado.get(i).NombreAsignatura;
+                n[i] = resultado.get(i).CodCurso;
             }
 
             adaptador = new ListaCursos(getApplicationContext(), amigos);
@@ -198,7 +198,7 @@ public class Asignaturas extends AppCompatActivity {
                     String itemValue = (String) listView_lista_de_amigos .getItemAtPosition(position);
                     Intent inten = new Intent(Asignaturas.this,ListaIntegrantes.class);
                     inten.putExtra("Materia",amigos[itemPosition]);
-                    inten.putExtra("codigo", resultado.get(itemPosition).Codigo );
+                    inten.putExtra("codigo", resultado.get(itemPosition).CodCurso);
                     inten.putExtra("codigoemisor",codEmisor);
                     startActivity(inten);
                 }

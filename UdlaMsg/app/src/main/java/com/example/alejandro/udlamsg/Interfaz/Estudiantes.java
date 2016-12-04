@@ -9,7 +9,7 @@ public class Estudiantes {
 
 
     public int Id_estudiantes;
-    public String NombreDeEstudiantes;
+    public String NombreEstudiante;
     public String Foto;
     public String Hora;
     public String Mensaje;
@@ -23,9 +23,6 @@ public class Estudiantes {
     public Estudiantes(SoapObject object){
         obj.SoapDeserilize(this,object);
     }
-
-
-
 
 
 }

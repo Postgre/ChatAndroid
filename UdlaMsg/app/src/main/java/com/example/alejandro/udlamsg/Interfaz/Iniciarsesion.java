@@ -61,7 +61,7 @@ public class Iniciarsesion extends AppCompatActivity {
             String webResponse = "";
             try{
                 final String NAMESPACE = "http://tempuri.org/";
-                final String URL = "http://52.53.151.16/ChatService/WebService.asmx";
+                final String URL = "http://52.53.151.16/SWChat/WebService.asmx";
                 final String SOAP_ACTION = "http://tempuri.org/Ingresar";
                 final String METHOD_NAME = "Ingresar";
 
@@ -73,9 +73,9 @@ public class Iniciarsesion extends AppCompatActivity {
                 pi.setType(Integer.class);
                 request.addProperty(pi);
                 pi=new PropertyInfo();
-                pi.setName("Contraseña");
+                pi.setName("contraseña");
                 pi.setValue(params[1]);
-                //pi.setValue("munar");
+                //pi.setValue("root");
                 pi.setType(Integer.class);
                 request.addProperty(pi);
                 SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);

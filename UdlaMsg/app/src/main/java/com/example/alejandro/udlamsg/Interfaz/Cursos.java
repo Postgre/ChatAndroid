@@ -7,9 +7,9 @@ import java.util.ArrayList;
 public class Cursos {
 
 
-    public String Materia;
+    public String NombreAsignatura;
     public int NumeroCurso;
-    public int Codigo;
+    public int CodCurso;
 
 
     Deserilization obj=new Deserilization();

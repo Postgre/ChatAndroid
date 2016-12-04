@@ -70,10 +70,10 @@ public class ListaIntegrantes extends AppCompatActivity {
         protected ArrayList<Estudiantes> doInBackground(Integer... params) {
             webrespons = new ArrayList<Estudiantes>();
             try {
-                final String NAMESPACE = "http://duban.org/";
-                final String URL = "http://52.36.238.241/DUban/Web_Service.asmx";
-                final String SOAP_ACTION = "http://duban.org/matriculados";
-                final String METHOD_NAME = "matriculados";
+                final String NAMESPACE = "http://tempuri.org/";
+                final String URL = "http://52.53.151.16/SWChat/WebService.asmx";
+                final String SOAP_ACTION = "http://tempuri.org/EstudiantesDelCurso";
+                final String METHOD_NAME = "EstudiantesDelCurso";
 
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
                 PropertyInfo pi = new PropertyInfo();
@@ -90,9 +90,9 @@ public class ListaIntegrantes extends AppCompatActivity {
                 HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
                 Deserilization oj = new Deserilization();
                 androidHttpTransport.call(SOAP_ACTION, envelope);
-
                 Persona person = new Persona((SoapObject) envelope.getResponse());
                 ArrayList<Estudiantes> arrayList = new ArrayList<Estudiantes>();
+
                 arrayList = oj.SoapDeserializeArray(Estudiantes.class, (SoapObject) (envelope.getResponse()));
                 SoapObject response = (SoapObject) envelope.getResponse();
 
@@ -127,7 +127,7 @@ public class ListaIntegrantes extends AppCompatActivity {
 
             for (int i = 0; i < cantidad; i++) {
 
-                _integrantes.getNombres()[i] = resultado.get(i).NombreDeEstudiantes;
+                _integrantes.getNombres()[i] = resultado.get(i).NombreEstudiante;
                 _integrantes.getCodigo()[i] = resultado.get(i).Id_estudiantes;
                 _integrantes.getImagenes()[i] = resultado.get(i).Foto;
                 _integrantes.getEstado()[i] = "DESCONECTADO";
