@@ -60,10 +60,10 @@ public class Iniciarsesion extends AppCompatActivity {
         protected  String doInBackground(String... params) {
             String webResponse = "";
             try{
-                final String NAMESPACE = "http://duban.org/";
-                final String URL = "http://52.36.238.241/DUban/Web_Service.asmx";
-                final String SOAP_ACTION = "http://duban.org/logueo";
-                final String METHOD_NAME = "logueo";
+                final String NAMESPACE = "http://tempuri.org/";
+                final String URL = "http://52.53.151.16/ChatService/WebService.asmx";
+                final String SOAP_ACTION = "http://tempuri.org/Ingresar";
+                final String METHOD_NAME = "Ingresar";
 
                 SoapObject request = new SoapObject(NAMESPACE, METHOD_NAME);
                 PropertyInfo pi=new PropertyInfo();

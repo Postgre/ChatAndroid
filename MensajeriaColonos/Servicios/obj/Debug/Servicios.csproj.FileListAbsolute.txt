@@ -1,0 +1,76 @@
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\ApplicationInsights.config
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\csc.exe
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\System.Collections.Immutable.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\System.Reflection.Metadata.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\vbc.exe
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\VBCSCompiler.exe
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\roslyn\VBCSCompiler.exe.config
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Servicios.dll.config
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Servicios.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Servicios.pdb
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\LogicaDeNegocio.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.Agent.Intercept.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.DependencyCollector.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.Web.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.WindowsServer.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.ApplicationInsights.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\MensajeriaColonos.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\MySql.Data.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\LogicaDeNegocio.pdb
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.DependencyCollector.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.Web.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.AI.WindowsServer.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.ApplicationInsights.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\bin\MensajeriaColonos.pdb
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\obj\Debug\Servicios.csprojResolveAssemblyReference.cache
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\obj\Debug\Servicios.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\Servicios\obj\Debug\Servicios.pdb
+G:\MensajeriaColonos\Servicios\bin\ApplicationInsights.config
+G:\MensajeriaColonos\Servicios\bin\roslyn\csc.exe
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.CSharp.Core.targets
+G:\MensajeriaColonos\Servicios\bin\roslyn\Microsoft.VisualBasic.Core.targets
+G:\MensajeriaColonos\Servicios\bin\roslyn\System.Collections.Immutable.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\System.Reflection.Metadata.dll
+G:\MensajeriaColonos\Servicios\bin\roslyn\vbc.exe
+G:\MensajeriaColonos\Servicios\bin\roslyn\VBCSCompiler.exe
+G:\MensajeriaColonos\Servicios\bin\roslyn\VBCSCompiler.exe.config
+G:\MensajeriaColonos\Servicios\bin\Servicios.dll.config
+G:\MensajeriaColonos\Servicios\bin\Servicios.dll
+G:\MensajeriaColonos\Servicios\bin\Servicios.pdb
+G:\MensajeriaColonos\Servicios\bin\LogicaDeNegocio.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.Agent.Intercept.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.DependencyCollector.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.PerfCounterCollector.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.ServerTelemetryChannel.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.Web.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.WindowsServer.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.ApplicationInsights.dll
+G:\MensajeriaColonos\Servicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+G:\MensajeriaColonos\Servicios\bin\MySql.Data.dll
+G:\MensajeriaColonos\Servicios\bin\MensajeriaColonos.dll
+G:\MensajeriaColonos\Servicios\bin\LogicaDeNegocio.pdb
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.DependencyCollector.xml
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.ServerTelemetryChannel.xml
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.Web.xml
+G:\MensajeriaColonos\Servicios\bin\Microsoft.AI.WindowsServer.xml
+G:\MensajeriaColonos\Servicios\bin\Microsoft.ApplicationInsights.xml
+G:\MensajeriaColonos\Servicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+G:\MensajeriaColonos\Servicios\bin\MensajeriaColonos.pdb
+G:\MensajeriaColonos\Servicios\obj\Debug\Servicios.csprojResolveAssemblyReference.cache
+G:\MensajeriaColonos\Servicios\obj\Debug\Servicios.dll
+G:\MensajeriaColonos\Servicios\obj\Debug\Servicios.pdb

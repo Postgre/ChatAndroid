@@ -1,0 +1,15 @@
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.dll
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.pdb
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.dll
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\bin\Release\MySql.Data.dll
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.pdb
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.csprojResolveAssemblyReference.cache
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.dll
+d:\usuario\documents\visual studio 2015\Projects\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.pdb
+G:\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.dll
+G:\MensajeriaColonos\LogicaDeNegocio\bin\Release\LogicaDeNegocio.pdb
+G:\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.dll
+G:\MensajeriaColonos\LogicaDeNegocio\bin\Release\MensajeriaColonos.pdb
+G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.csprojResolveAssemblyReference.cache
+G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.dll
+G:\MensajeriaColonos\LogicaDeNegocio\obj\Release\LogicaDeNegocio.pdb

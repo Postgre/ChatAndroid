@@ -1,0 +1,11 @@
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\bin\Debug\MensajeriaColonos.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\bin\Debug\MensajeriaColonos.pdb
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\bin\Debug\MySql.Data.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.csprojResolveAssemblyReference.cache
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.dll
+D:\USUARIO\Documents\Visual Studio 2015\Projects\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.pdb
+G:\MensajeriaColonos\MensajeriaColonos\bin\Debug\MensajeriaColonos.dll
+G:\MensajeriaColonos\MensajeriaColonos\bin\Debug\MensajeriaColonos.pdb
+G:\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.csprojResolveAssemblyReference.cache
+G:\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.dll
+G:\MensajeriaColonos\MensajeriaColonos\obj\Debug\MensajeriaColonos.pdb
